@@ -195,6 +195,9 @@ body {
 }
 .main-page-nav-bar {
 		height: 83px;
+		-webkit-box-pack: space-evenly;
+		    -ms-flex-pack: space-evenly;
+		        justify-content: space-evenly;
 		width: 100%;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -203,9 +206,7 @@ body {
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: row;
 		        flex-direction: row;
-		-webkit-box-pack: space-evenly;
-		    -ms-flex-pack: space-evenly;
-		        justify-content: space-evenly;
+		justify-content: space-evenly;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
@@ -225,11 +226,8 @@ body {
 		letter-spacing: 2.4px;
 		text-transform: uppercase;
 		color: #ffffff;
-		margin: 150px;
 }
 .main-page-nav-bar ul {
-		width: 60%;
-		padding-right: 15%;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -241,10 +239,13 @@ body {
 		font-weight: 400;
 		font-size: 14px;
 		list-style-type: none;
-		margin-left: 60px;
 		text-transform: uppercase;
 		color: white;
 		cursor: pointer;
+}
+.main-page-nav-bar ul li {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
 }
 
 .main-page {
@@ -272,9 +273,14 @@ body {
 		        align-items: center;
 		-webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 		        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
 }
 .main-page__description-text {
-		width: 50%;
+		-webkit-box-flex: 1;
+		    -ms-flex: auto;
+		        flex: auto;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -289,7 +295,6 @@ body {
 		    -ms-flex-align: start;
 		        align-items: flex-start;
 		text-align: start;
-		margin-left: 160px;
 }
 .main-page__description h2 {
 		font-family: "Aleo", sans-serif;
@@ -321,16 +326,17 @@ body {
 		cursor: pointer;
 }
 .main-page__description-imgs {
-		width: 50%;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
+		-webkit-box-flex: 1;
+		    -ms-flex: auto;
+		        flex: auto;
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
-		margin-top: 140px;
-		margin-left: 100px;
+		flex: auto;
 }
 
 #mountain-destination {
@@ -362,8 +368,10 @@ body {
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
-		margin-left: 310px;
 		margin-bottom: 20px;
+		-ms-flex-item-align: center;
+		    -ms-grid-row-align: center;
+		    align-self: center;
 }
 .roadmap__items {
 		display: -webkit-box;
@@ -387,6 +395,9 @@ body {
 		font-size: 26px;
 		color: #e8e8e8;
 }
+.roadmap__item {
+		text-align: center;
+}
 
 .grant-spain-part-one {
 		background-image: url("../../images/spanish-appartment.png");
@@ -395,13 +406,13 @@ body {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-orient: vertical;
+		-webkit-box-orient: horizontal;
 		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
-		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+		-webkit-box-pack: start;
+		    -ms-flex-pack: start;
+		        justify-content: flex-start;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
@@ -410,10 +421,13 @@ body {
 		background-size: cover;
 }
 .grant-spain-part-one__description-container {
-		height: 400px;
-		width: 40%;
+		height: auto;
+		margin-left: 10%;
+		margin-right: 10%;
+		padding: 0.5rem;
+		width: 100%;
 		background-color: #232323;
-		opacity: 0.8;
+		background-color: rgba(35, 35, 35, 0.8);
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -425,7 +439,12 @@ body {
 		    -ms-flex-align: start;
 		        align-items: flex-start;
 		text-align: start;
-		margin-right: 35%;
+}
+@media (min-width: 768px) {
+		.grant-spain-part-one__description-container {
+				width: 50%;
+				height: 400px;
+		}
 }
 .grant-spain-part-one__description-container-text {
 		display: -webkit-box;
@@ -442,7 +461,6 @@ body {
 		    -ms-flex-align: start;
 		        align-items: flex-start;
 		text-align: start;
-		margin-left: 10%;
 }
 .grant-spain-part-one__description-container h4 {
 		font-family: "Josefin Sans", sans-serif;
@@ -492,13 +510,13 @@ body {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-orient: vertical;
+		-webkit-box-orient: horizontal;
 		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
-		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
@@ -507,8 +525,11 @@ body {
 		background-size: cover;
 }
 .grant-spain-part-two__description-container {
-		height: 400px;
-		width: 40%;
+		height: auto;
+		padding: 0.5rem;
+		width: 100%;
+		margin-left: 10%;
+		margin-right: 10%;
 		background-color: #232323;
 		opacity: 0.8;
 		display: -webkit-box;
@@ -522,7 +543,12 @@ body {
 		    -ms-flex-align: end;
 		        align-items: flex-end;
 		text-align: start;
-		margin-left: 35%;
+}
+@media (min-width: 768px) {
+		.grant-spain-part-two__description-container {
+				width: 50%;
+				height: 400px;
+		}
 }
 .grant-spain-part-two__description-container-text {
 		display: -webkit-box;
@@ -539,7 +565,6 @@ body {
 		    -ms-flex-align: start;
 		        align-items: flex-start;
 		text-align: start;
-		margin-left: 10%;
 }
 .grant-spain-part-two__description-container h4 {
 		font-family: "Josefin Sans", sans-serif;
@@ -547,7 +572,6 @@ body {
 		font-weight: normal;
 		font-size: 20px;
 		color: #e8e8e8;
-		opacity: 1;
 }
 .grant-spain-part-two__description-container h3 {
 		font-family: "Josefin Sans", sans-serif;
@@ -556,7 +580,6 @@ body {
 		font-size: 20px;
 		text-transform: uppercase;
 		color: white;
-		opacity: 1;
 }
 .grant-spain-part-two__description-container p {
 		font-family: "Josefin Sans", sans-serif;
@@ -579,7 +602,6 @@ body {
 		margin-top: 60px;
 		text-transform: uppercase;
 		cursor: pointer;
-		opacity: 1;
 }
 
 .tourist-comment {
@@ -609,28 +631,56 @@ body {
 		font-weight: 400;
 		font-size: 36px;
 		color: #ffffff;
-		margin-top: -10%;
 }
 .tourist-comment__container {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-orient: horizontal;
-		-webkit-box-direction: normal;
-		    -ms-flex-direction: row;
-		        flex-direction: row;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
 		justify-items: center;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
 		text-align: center;
+		margin-left: 10%;
+		margin-right: 10%;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+}
+@media (min-width: 768px) {
+		.tourist-comment__container {
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				    -ms-flex-direction: row;
+				        flex-direction: row;
+				-webkit-box-flex: unset;
+				    -ms-flex: unset;
+				        flex: unset;
+		}
 }
 .tourist-comment__container-img {
-		width: 50%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-image: url(../../images/tourist.png);
+		width: 100%;
 }
 .tourist-comment__container-text {
-		width: 45%;
-		height: 350px;
+		padding: 0.5rem;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
 		background-color: #333333;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -639,14 +689,14 @@ body {
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
-		justify-items: flex-start;
-		-ms-flex-pack: distribute;
-		    justify-content: space-around;
-		-webkit-box-align: start;
-		    -ms-flex-align: start;
-		        align-items: flex-start;
 		text-align: start;
-		margin-left: 10%;
+}
+@media (min-width: 768px) {
+		.tourist-comment__container-text {
+				-webkit-box-flex: 2;
+				    -ms-flex: 2;
+				        flex: 2;
+		}
 }
 .tourist-comment__container-text h5 {
 		font-family: "Josefin Sans", sans-serif;
@@ -680,20 +730,18 @@ footer {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
+		padding-bottom: 2rem;
+		padding-top: 2rem;
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
 		justify-items: center;
-		-webkit-box-pack: space-evenly;
-		    -ms-flex-pack: space-evenly;
-		        justify-content: space-evenly;
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
 }
-
-.footer-text {
+footer .footer-text {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -704,20 +752,20 @@ footer {
 		text-align: center;
 		color: white;
 }
-.footer-text h1 {
+footer .footer-text h1 {
 		font-family: "Josefin Sans", sans-serif;
 		font-style: normal;
 		font-weight: 700;
 		font-size: 24px;
 }
-.footer-text h3 {
+footer .footer-text h3 {
 		font-family: "Josefin Sans", sans-serif;
 		font-style: normal;
 		font-weight: 400;
 		font-size: 16px;
+		margin-top: 0;
 }
-
-.travel-landing-page-footer__icons {
+footer .travel-landing-page-footer__icons {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -732,4 +780,17 @@ footer {
 		-webkit-box-align: center;
 		    -ms-flex-align: center;
 		        align-items: center;
+}
+
+@media (min-width: 992px) {
+		.container {
+				padding-left: 10%;
+				padding-right: 10%;
+		}
+}
+@media (min-width: 1200px) {
+		.container {
+				padding-left: 25%;
+				padding-right: 25%;
+		}
 }

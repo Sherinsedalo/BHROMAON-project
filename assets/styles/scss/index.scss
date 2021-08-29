@@ -1,6 +1,6 @@
-@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
-  (min-width: 768px) and (min-resolution: 192dpi) {
-}
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
 
 body {
   margin: 0;
@@ -155,6 +155,7 @@ body {
 
 .main-page-nav-bar {
   height: 83px;
+  justify-content: space-evenly;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -171,11 +172,9 @@ body {
     letter-spacing: 2.4px;
     text-transform: uppercase;
     color: #ffffff;
-    margin: 150px;
+    // margin: 150px;
   }
   ul {
-    width: 60%;
-    padding-right: 15%;
     display: flex;
     justify-content: space-between;
     font-family: "Aleo", sans-serif;
@@ -183,10 +182,14 @@ body {
     font-weight: 400;
     font-size: 14px;
     list-style-type: none;
-    margin-left: 60px;
     text-transform: uppercase;
     color: white;
     cursor: pointer;
+
+    li {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
   }
 }
 
@@ -206,16 +209,15 @@ body {
     flex-direction: row;
     align-items: center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
+    justify-content: space-between;
     &-text {
-      width: 50%;
+      flex: auto;
       display: flex;
       flex-direction: column;
       justify-items: flex-start;
       justify-content: space-around;
       align-items: flex-start;
       text-align: start;
-      margin-left: 160px;
     }
 
     h2 {
@@ -253,11 +255,10 @@ body {
   }
 
   &__description-imgs {
-    width: 50%;
     display: flex;
+    flex: auto;
     flex-direction: column;
-    margin-top: 140px;
-    margin-left: 100px;
+    flex: auto;
   }
 }
 
@@ -279,8 +280,8 @@ body {
     display: flex;
     justify-items: center;
     align-items: center;
-    margin-left: 310px;
     margin-bottom: 20px;
+    align-self: center;
   }
 
   &__items {
@@ -297,6 +298,9 @@ body {
       color: #e8e8e8;
     }
   }
+  &__item {
+    text-align: center;
+  }
 }
 
 .grant-spain-part-one {
@@ -304,23 +308,30 @@ body {
   width: 100%;
   height: 800px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   &__description-container {
-    height: 400px;
-    width: 40%;
+    height: auto;
+
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0.5rem;
+    width: 100%;
+    @media (min-width: $screen-sm-min) {
+      width: 50%;
+      height: 400px;
+    }
     background-color: #232323;
-    opacity: 0.8;
+    background-color: rgba(35, 35, 35, 0.8);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: start;
-    margin-right: 35%;
 
     &-text {
       display: flex;
@@ -329,7 +340,6 @@ body {
       justify-content: space-around;
       align-items: flex-start;
       text-align: start;
-      margin-left: 10%;
     }
     h4 {
       font-family: "Josefin Sans", sans-serif;
@@ -380,23 +390,30 @@ body {
   width: 100%;
   height: 800px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   &__description-container {
-    height: 400px;
-    width: 40%;
+    height: auto;
+    padding: 0.5rem;
+    width: 100%;
+    @media (min-width: $screen-sm-min) {
+      width: 50%;
+      height: 400px;
+    }
+
+    margin-left: 10%;
+    margin-right: 10%;
     background-color: #232323;
     opacity: 0.8;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: start;
-    margin-left: 35%;
 
     &-text {
       display: flex;
@@ -405,7 +422,6 @@ body {
       justify-content: space-around;
       align-items: flex-start;
       text-align: start;
-      margin-left: 10%;
     }
     h4 {
       font-family: "Josefin Sans", sans-serif;
@@ -413,7 +429,6 @@ body {
       font-weight: normal;
       font-size: 20px;
       color: #e8e8e8;
-      opacity: 1;
     }
     h3 {
       font-family: "Josefin Sans", sans-serif;
@@ -422,7 +437,6 @@ body {
       font-size: 20px;
       text-transform: uppercase;
       color: white;
-      opacity: 1;
     }
     p {
       font-family: "Josefin Sans", sans-serif;
@@ -446,7 +460,6 @@ body {
       margin-top: 60px;
       text-transform: uppercase;
       cursor: pointer;
-      opacity: 1;
     }
   }
 }
@@ -462,35 +475,49 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   h2 {
     font-family: "Aleo", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
     color: #ffffff;
-    margin-top: -10%;
   }
   &__container {
     display: flex;
-    flex-direction: row;
+    flex: 1;
     justify-items: center;
     align-items: center;
     text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    flex-direction: column;
+    @media (min-width: $screen-sm-min) {
+      flex-direction: row;
+      flex: unset;
+    }
 
     &-img {
-      width: 50%;
+      display: flex;
+      flex: 1;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(../../images/tourist.png);
+      width: 100%;
     }
+
     &-text {
-      width: 45%;
-      height: 350px;
+      padding: 0.5rem;
+      flex: 1;
+      @media (min-width: $screen-sm-min) {
+        flex: 2;
+      }
       background-color: #333333;
       display: flex;
       flex-direction: column;
-      justify-items: flex-start;
-      justify-content: space-around;
-      align-items: flex-start;
       text-align: start;
-      margin-left: 10%;
       h5 {
         font-family: "Josefin Sans", sans-serif;
         font-style: normal;
@@ -520,35 +547,50 @@ body {
 footer {
   background-color: grey;
   display: flex;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
   flex-direction: column;
   justify-items: center;
-  justify-content: space-evenly;
   align-items: center;
+
+  .footer-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    h1 {
+      font-family: "Josefin Sans", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+    }
+    h3 {
+      font-family: "Josefin Sans", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      margin-top: 0;
+    }
+  }
+
+  .travel-landing-page-footer__icons {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
 
-.footer-text {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: white;
-  h1 {
-    font-family: "Josefin Sans", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
+.container {
+  @media (min-width: $screen-sm-min) {
   }
-  h3 {
-    font-family: "Josefin Sans", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
+  @media (min-width: $screen-md-min) {
+    padding-left: 10%;
+    padding-right: 10%;
   }
-}
-
-.travel-landing-page-footer__icons {
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  justify-content: space-evenly;
-  align-items: center;
+  @media (min-width: $screen-lg-min) {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
 }
