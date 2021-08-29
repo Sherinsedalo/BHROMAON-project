@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+}
+
+.travel-landing-page {
+  background-image: url("../../images/landing-page/landing-background.png");
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    color: white;
+
+    h1 {
+      font-family: "Josefin Sans";
+      font-weight: 700;
+      font-size: 48px;
+      color: white;
+    }
+
+    h3 {
+      font-family: "Josefin Sans";
+      font-weight: 400;
+      font-size: 22px;
+      color: white;
+    }
+  }
+}
+
+.travel-landing-page__container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.travel-search-bar {
+  display: flex;
+
+  &__container {
+    border: 1px solid white;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.travel-search-bar__container-input {
+  border: none;
+  height: 40px;
+  width: 320px;
+  background: transparent;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  color: #999999;
+  text-align: center;
+}
+
+.travel-landing-page__search-container__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5474FD;
+    font-family: 'aleo',sans-serif;
+    font-weight: 400;
+font-size: 14px;
+color: white;
+border-color:white;
+cursor: pointer;
+}
+
+.travel-landing-page-scrolling-effect{
+    display: flex;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  .scroll a {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    z-index: 2;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #fff;
+    font : normal 400 20px/1 'Josefin Sans', sans-serif;
+    letter-spacing: .1em;
+    text-decoration: none;
+    transition: opacity .3s;
+  }
+  .scroll a:hover {
+    opacity: .5;
+  }
+  
+  #scrolling-effect a {
+    padding-top: 70px;
+  }
+  #scrolling-effect a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb05 1.5s infinite;
+    animation: sdb05 1.5s infinite;
+    box-sizing: border-box;
+  }
+  @-webkit-keyframes sdb05 {
+    0% {
+      -webkit-transform: rotate(-45deg) translate(0, 0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+      opacity: 0;
+    }
+  }
+  @keyframes sdb05 {
+    0% {
+      transform: rotate(-45deg) translate(0, 0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(-45deg) translate(-20px, 20px);
+      opacity: 0;
+    }
+  }
+  
